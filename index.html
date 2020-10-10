@@ -3,12 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Coursera</title>
+    <script src="js/angular-1.8.1/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <title>Yaakov Chaikin: Angular JS Practice</title>
 </head>
 <body>
-    <h1>Hello Coursera</h1>
+    <div id="lecture6" style="display: block; margin-bottom: 4rem;">
+        <h1>Lecture 6: Name Calculator</h1>
 
-    <p>I am thrilled about this course!</p>
+        <div ng-controller="NameCalculatorController">
+            <div style="margin-bottom: 1em;">
+                Your name: 
+                <input type="text" 
+                    ng-model="name" 
+                    ng-keyup="displayNumeric();">
+            </div>
+
+            <div>
+                Total Numeric value of person's name is: {{totalValue}}
+            </div>     
+        </div>
+    </div>
+
+
+    <div id="lecture7" style="display: block; margin-bottom: 4rem;">
+        <h1>Lecture 7: HTML5 Custom Attributes</h1>
+
+        <div id="target">
+            <section>Section 1
+                <article>Article 1</article>
+            </section>
+        </div>
+    </div>
+
+
+
+    <div id="lecture9" style="display: block; margin-bottom: 4rem;">
+        <h1>Lecture 9: Dependency Injection in JavaScript (and AngularJS)</h1>
+
+        <div ng-controller="DIController">
+            <input type="test"
+                ng-model="name"
+                ng-blur="upper();">
+        </div>
+    </div>
+
+
+
+    <div id="lecture10" style="display: block; margin-bottom: 4rem;">
+        <h1>Lecture 10: Dependency Injection in JavaScript (and AngularJS)</h1>
+
+        <div ng-controller="DIController">
+            <input type="test"
+                ng-model="name"
+                ng-blur="upper();">
+        </div>
+    </div>
+
+
+
+    <div id="lecture11" style="display: block; margin-bottom: 4rem;">
+        <h1>Lecture 11: Expressions and Interpolation</h1>
+        <div ng-app='MsgApp' ng-controller='MsgController'>
+            {{name}} has a message for you: <br>
+            {{sayMessage()}} 
+
+            <div>
+                <button ng-click="feedYaakov()">{{whatToDo}}</button>
+                <br>
+                <img ng-src="images/yaakov_{{stateOfBeing}}.png">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="lecture12" style="display: block; margin-bottom: 4rem;">
+    
+    
+    
+    </div>
+
+
+
+    <div id="assignments">
+        <h2>Assignments:</h2>
+        <ul>
+            <li>
+                <a href="assignments/assignment1/index.html">Assignment 1</a>
+            </li>
+            <li>
+                <a href="assignments/assignment2/index.html">Assignment 2</a>
+            </li>
+            <li>
+                <a href="assignments/assignment3/index.html">Assignment 3</a>
+            </li>
+            <li>
+                <a href="assignments/assignment4/index.html">Assignment 4</a>
+            </li>
+            <li>
+                <a href="assignments/assignment5/index.html">Assignment 5</a>
+            </li>
+        </ul>
+        
+        
+        
+        
+        
+    </div>
+
+    <script>
+        // var elem = document.getElementById('target');
+        // console.log(elem);
+        // console.log(elem.getAttribute('ng-app'));
+
+        // var elem2 = document.querySelectorAll('[ng-app]');
+        // console.log(elem2[1]);
+        // console.log(elem2[1].getAttribute('ng-app'));
+
+    </script>
+
     
 </body>
 </html>
