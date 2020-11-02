@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingListApp'>
+    <head>
+        <meta charset="utf-8">
+        <script src="./../js/angular-1.8.1/angular.min.js"></script>
+        <script src="./../js/w2/provider.js"></script>
+        <style>
+            .error { color: #e90404; font-weight: 600;}
+            p { display: block; margin: 0 0 0.2em;}
+            body { font-size: 1.2em; }
+            #list1, #list2 { float: left; }
+            #list2 { margin-left: 40px; }
+        </style>
+        <title>
+            Custom Service Through a Provider | Yaakov Chaikin | Angular JS Practice
+        </title>
+    </head>
+<body>
+    <h1>Custom Service Through a Provider</h1>
+
+    <!-- Preconfigured List -->
+    <div id="list" ng-controller='ShoppingListController as list'>
+        <h3>Shopping List</h3>
+        <input type="text" ng-model="list.itemName" placeholder="item name">
+        <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
+        <button ng-click="list.addItem();">Add Item</button>
+        <ol>
+          <li ng-repeat="item in list.items">
+            {{ item.quantity }} of {{ item.name }}
+            <button ng-click="list.removeItem($index);">Remove Item</button>
+          </li>
+        </ol>
+        <!-- <div ng-if="list.errorMessage" class="error">Error: {{list.errorMessage}}</div> -->
+
+        <!-- <div ng-show="list.errorMessage" class="error">Error: {{list.errorMessage}}</div> -->
+
+        <div ng-hide="list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
+      </div>
+  
+</body>
+</html>

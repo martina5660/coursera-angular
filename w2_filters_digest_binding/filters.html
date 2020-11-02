@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="./../js/angular-1.8.1/angular.min.js"></script>
+    <script src="./../js/w2/filters.js"></script>
+	<style type="css/text">
+		p { display: block; margin: 0 0 0.2em;}
+	</style>
+	<title>Yaakov Chaikin: Angular JS Practice - Filters</title>
+</head>
+<body>
+	<h1>Filters</h1>
+	<div ng-app='MsgApp' ng-controller='MsgController'>
+		<h2>{{name}} has a message for you: </h2>
+		<p>Truth (inside HTML tags) : {{ msg | truth : 'healthy' : 'junk' }}</p>
+		<p>Big truth: {{ sayLovesMessage() | truth : 'healthy snacks' : 'junk food' | uppercase }}</p>
+		<p>Original: {{ sayMessage() }}</p> 
+		<p>Love: {{ sayLovesMessage() }}</p>
+
+		
+		
+		
+
+		<div>
+		<button ng-click="feedYaakov()">Feed Yaakov</button>
+		Cost: {{ cookieCost | currency : 'RU' : 2 }}
+		<br>
+
+		<img ng-src="images/yaakov_{{stateOfBeing}}.png">
+	  </div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='CounterApp'>
+    <head>
+        <meta charset="utf-8">
+        <script src="./../js/angular-1.8.1/angular.min.js"></script>
+        <script src="./../js/w2/digest.js"></script>
+        <style type="css/text">
+            p { display: block; margin: 0 0 0.2em;}
+        </style>
+        <title>Yaakov Chaikin: Angular JS Practice - Dygest Cycle</title>
+    </head>
+    <body>
+        <h1>The Digest Cycle</h1>
+        <div ng-controller='CounterController'>
+            <!-- <button ng-click="showNumberOfWatchers()">
+            Log # of Watchers</button>
+            
+            <div>
+                <button ng-click="countOnce()">Up Once Counter (once)</button>
+                <button ng-click="upCounter()">Increment Counter</button>
+            </div>
+
+            <div>
+                <p>Once counter: {{ onceCounter }}</p>
+                <p>Regular counter: {{ counter }}</p>
+            </div> -->
+
+            <div>
+                <button ng-click="upCounter()">Increment Counter</button>
+            </div>
+            <div>
+                <p>Regular counter: {{ counter }}</p>
+            </div>
+        </div>
+    </body>
+</html>

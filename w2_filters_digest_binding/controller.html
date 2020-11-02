@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='ControllerExmpl'>
+    <head>
+        <meta charset="utf-8">
+        <script src="./../js/angular-1.8.1/angular.min.js"></script>
+        <script src="./../js/w2/controller.js"></script>
+        <style type="css/text">
+            p { display: block; margin: 0 0 0.2em;}
+        </style>
+        <title>
+            Controller: Scope Inheritance and Syntax | Yaakov Chaikin | Angular JS Practice
+        </title>
+    </head>
+    <body>
+        <h1>Controller: Scope Inheritance and Syntax</h1>
+
+        <!-- <div ng-controller='ParentCtrl1'>
+            <div ng-controller='ChildCtrl1'>
+            </div>
+        </div> -->
+
+        <div ng-controller='ParentCtrl2 as parent'>
+            <p>Parent value: {{ parent.value }}</p>
+      
+            <div ng-controller='ChildCtrl2 as child'>
+                <p>Child value: {{ child.value }}</p>
+                <p>Parent value: {{ parent.value }}</p>
+            </div>
+          </div>
+         
+   </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='ShoppingListApp'>
+    <head>
+        <meta charset="utf-8">
+        <script src="./../js/angular-1.8.1/angular.min.js"></script>
+        <script src="./../js/w2/repeat.js"></script>
+        <style type="css/text">
+            p { display: block; margin: 0 0 0.2em;}
+        </style>
+        <title>ng-repeat & filters | Angular JS Practice | Yaakov Chaikin</title>
+    </head>
+    <body>
+        <h1>ng-repeat & filters</h1>
+        <div ng-controller='ShoppingListController'>
+            <!-- Shopping List #1: -->
+            <h3>Shopping List:</h3>
+            <input type="text" ng-model='search'>
+            <ul>
+                <li ng-repeat="item in shoppingList1 | filter : search">
+                    {{ item }}
+                </li>
+            </ul>
+
+            <!-- Shopping List #2: -->
+            <!-- <ul>
+                <li ng-repeat="item in shoppingList2">
+                    Buy {{item.quantity}} of {{item.name}}(s)
+                </li>
+            </ul> -->
+
+            <!-- Shopping List #3: -->
+            <!-- <input type="text" ng-model="shoppingList2[0].quantity">
+            
+            <ul>
+                <li ng-repeat="item in shoppingList2">
+                    {{$index + 1}}. Buy {{item.quantity}} of {{item.name}}(s)
+                    <br>
+                    <input type="text" ng-model="item.quantity">
+                </li>
+            </ul>
+            
+            <input type="text" ng-model="newItemName" placeholder="item name">
+            
+            <input type="text" ng-model="newItemQuantity" placeholder="item quantity">
+
+            <button ng-click="addToList()">Add To List</button> -->
+        </div>
+    </body>
+</html>
