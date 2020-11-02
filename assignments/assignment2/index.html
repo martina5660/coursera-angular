@@ -20,39 +20,39 @@
       <div class="row">
 
         <!-- To Buy List -->
-        <div class="col-md-5" ng-controller="ShoppingListController1 as list1">
+        <div class="col-md-5" ng-controller="ToBuyListController as toBuyList">
           <h2>To Buy:</h2>
           
           <ul class="list-group">
-            <li class="row list-group-item" ng-repeat="item in list1.items">
+            <li class="row list-group-item" ng-repeat="item in toBuyList.items">
               <span class="col-sm-7">
                 Buy {{ item.quantity }} {{ item.name }} 
               </span>
               <button class="btn btn-default col-sm-3 col-sm-offset-2"" 
-                      ng-click="list1.removeItem($index);">
+                      ng-click="toBuyList.removeItem($index);">
                 <span class="glyphicon glyphicon-ok"></span> Bought
               </button>
             </li>
           </ul>
 
-          <div ng-if="list1.items.length == 0" class="emptyMessage">
+          <div ng-if="toBuyList.items.length == 0" class="emptyMessage">
             Everything is bought!
           </div>
         </div>
 
         <!-- Already Bought List -->
-        <div class="col-md-5 col-md-offset-2" ng-controller="ShoppingListController2 as list2">
+        <div class="col-md-5 col-md-offset-2" ng-controller="BoughtItemsListController as boughtItemsList">
           <h2>Already Bought:</h2>
 
           <ul class="list-group">
-            <li class="row list-group-item" ng-repeat="item in list2.items">
+            <li class="row list-group-item" ng-repeat="item in boughtItemsList.items">
               <span class="col-sm-7">
                 Bought {{ item.quantity }} {{ item.name }} 
               </span>
             </li>
           </ul>
 
-          <div ng-if="list2.items.length == 0" class="emptyMessage">
+          <div ng-if="boughtItemsList.items.length == 0" class="emptyMessage">
             Nothing bought yet.
           </div>
         </div>
