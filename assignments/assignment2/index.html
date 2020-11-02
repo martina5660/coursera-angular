@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="ShoppingList">
+<html lang="en" ng-app="ShoppingListCheckOff">
   <head>
     <title>Assignment 2: Shopping List Check Off</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,39 +20,39 @@
       <div class="row">
 
         <!-- To Buy List -->
-        <div class="col-md-5" ng-controller="ToBuyListController as toBuyList">
+        <div class="col-md-5" ng-controller="ToBuyController as list">
           <h2>To Buy:</h2>
           
           <ul class="list-group">
-            <li class="row list-group-item" ng-repeat="item in toBuyList.items">
+            <li class="row list-group-item" ng-repeat="item in list.items">
               <span class="col-sm-7">
                 Buy {{ item.quantity }} {{ item.name }} 
               </span>
               <button class="btn btn-default col-sm-3 col-sm-offset-2"" 
-                      ng-click="toBuyList.removeItem($index);">
+                      ng-click="list.removeItem($index);">
                 <span class="glyphicon glyphicon-ok"></span> Bought
               </button>
             </li>
           </ul>
 
-          <div ng-if="toBuyList.items.length == 0" class="emptyMessage">
+          <div ng-if="list.items.length == 0" class="emptyMessage">
             Everything is bought!
           </div>
         </div>
 
         <!-- Already Bought List -->
-        <div class="col-md-5 col-md-offset-2" ng-controller="BoughtItemsListController as boughtItemsList">
+        <div class="col-md-5 col-md-offset-2" ng-controller="AlreadyBoughtController as list">
           <h2>Already Bought:</h2>
 
           <ul class="list-group">
-            <li class="row list-group-item" ng-repeat="item in boughtItemsList.items">
+            <li class="row list-group-item" ng-repeat="item in list.items">
               <span class="col-sm-7">
                 Bought {{ item.quantity }} {{ item.name }} 
               </span>
             </li>
           </ul>
 
-          <div ng-if="boughtItemsList.items.length == 0" class="emptyMessage">
+          <div ng-if="list.items.length == 0" class="emptyMessage">
             Nothing bought yet.
           </div>
         </div>
